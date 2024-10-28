@@ -1,0 +1,48 @@
+import mysql.connector
+from mysql.connector import Error
+from datetime import datetime
+
+def insert_record(fecha_hora, valor):
+    try:
+        # Conectar a la base de datos MySQL
+        connection = mysql.connector.connect(
+            host='localhost',  # Cambia esto si tu contenedor está en otra dirección
+            database='tu_base_de_datos',
+            user='tu_usuario',
+            password='tu_contraseña'
+        )
+
+        if connection.is_connected():
+            cursor = connection.cursor()
+
+            # Crear la sentencia SQL
+            sql_insert_query = """INSERT INTO current (fecha, valor) VALUES (%s, %s)"""
+
+            # Datos a insertar
+            record_to_insert = (fecha_hora, valor)
+
+            # Ejecutar la sentencia SQL
+            cursor.execute(sql_insert_query, record_to_insert)
+
+            # Confirmar los cambios en la base de datos
+            connection.commit()
+            print("Record inserted successfully into current table")
+
+    except Error as e:
+        print("Error while connecting to MySQL", e)
+    finally:
+        # Cerrar la conexión a la base de datos
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("MySQL connection is closed")
+
+if __name__ == "__main__":
+    # Ejemplo de uso
+    fecha_hora = datetime.now().strftime('%Y-%m-%d %H:%M:%S')  # Usa la fecha y hora actual en el formato deseado
+    valor = 12345.67  # Ejemplo de valor decimal
+
+    insert_record(fecha_hora, valor)
+
+
+Error while connecting to MySQL 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-operation (daily-operation-date, daily-operation-price) VALUES ('2024-10-19 19:' at line 1
