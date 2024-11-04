@@ -7,10 +7,10 @@ from absdb import calcula_tendencia
 
 currency = 'mxn' #sacar de las variables de env  
 crypto = 'bitcoin,Ripple,ethereum,dogecoin'
-valor_compra = 1328000 # valor de tolerencia antes de vender - oportunidad de compra    
-valor_inicial_compra = 1303490
-valor_inversion_inicial = 0
-porcentaje_tolerancia_min = 4.5 # sirve pasa saber cuando comprar 1328000 y 4.5 = 1268240.0
+valor_compra = 1425000 # valor de tolerencia antes de vender - oportunidad de compra    
+valor_inicial_compra = 1407508
+valor_inversion_inicial = 1181.36
+porcentaje_tolerancia_min = 4 # sirve pasa saber cuando comprar 1328000 y 4.5 = 1268240.0
 porcentaje_ganacia_ideal = 5
 
 def insert_record(fecha, valor): 
@@ -75,7 +75,7 @@ if response.status_code == 200:
     print(f"porcentaje hoy: {porcentaje_ganacia_perdida} y monto actual {monto_actual}")
 
     #obtener los valores de la tendencia
-    arriba_del_promedio, abajo_del_promedio = calcula_tendencia(1000)
+    arriba_del_promedio, abajo_del_promedio = calcula_tendencia(500)
     tendencia = ""
     if arriba_del_promedio > abajo_del_promedio:
         tendencia = "al alza"
@@ -89,7 +89,7 @@ if response.status_code == 200:
             manda_mail("Bitcoin-Alerta: Perdida de dinero", f"porcentaje hoy: {porcentaje_ganacia_perdida}, monto invertido {valor_inversion_inicial} y monto actual {monto_actual}, porcentaje de registros arriba del promedio {arriba_del_promedio:.3f}% y porcentaje de registros abajo del promedio {abajo_del_promedio:.3f}%, la tendencia es {tendencia}")
         
     if(porcentaje_ganacia_perdida > porcentaje_ganacia_ideal and valor_inversion_inicial != 0) :
-      manda_mail("Atención: puede haber ganancias.", f"porcentaje hoy: {porcentaje_ganacia_perdida}, monto invertido {valor_inversion_inicial} y monto actual {monto_actual}")
+      manda_mail("Bitcoin Atención: puede haber ganancias.", f"porcentaje hoy: {porcentaje_ganacia_perdida}, monto invertido {valor_inversion_inicial} y monto actual {monto_actual}")
     # Obtener el precio actual
     precio_actual = bitcoin_price 
     print(f"Precio actual de Bitcoin: {precio_actual}")

@@ -15,7 +15,7 @@ def obtener_datos():
 
         if connection.is_connected():
             cursor = connection.cursor()
-            cursor.execute("SELECT * FROM db.`daily-operation`")  # Cambia "valor" y "tu_tabla" según tu esquema
+            cursor.execute("SELECT * FROM db.`daily-operation_solana`")  # Cambia "valor" y "tu_tabla" según tu esquema
             resultados = cursor.fetchall()
             
             return [resultado[1] for resultado in resultados]  # Devuelve solo los valores
