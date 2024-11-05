@@ -25,7 +25,7 @@ data = get_api_price(cripto["nombre"], cripto["moneda"])
 cripto_price = data[cripto["nombre"]][ cripto["moneda"]]
 fecha = datetime.now().strftime('%Y-%m-%d %H:%M:%S') 
 #Guardamos la info en la base de datos
-datos_guardados = insert_record(fecha, cripto_price, cripto['moneda']) # todo mandar la moneda
+datos_guardados = insert_record(fecha, cripto_price, cripto['nombre']) # todo mandar la moneda
 
 #Lo que vale mi inversion en dinero
 valor_actual_inversion = cripto["invertido"] * cripto_price
@@ -37,12 +37,20 @@ valor_actual_inversion = cripto["invertido"] * cripto_price
 porcentaje_ganacia_perdida = ((valor_actual_inversion*100) / cripto["inversion_referencia"]) - 100
 
 arriba_del_promedio, abajo_del_promedio = calcula_tendencia(300, cripto["nombre"] ) #se puede parametrizar
+arriba_del_promedio = 0
+abajo_del_promedio = 0
+try:
+    arriba_del_promedio, abajo_del_promedio = calcula_tendencia(300, cripto["nombre"] ) #se puede parametrizar
+except Error as e:
+    print(f"Error al obtener los datos de la base de datos: {e}")
+    arriba_del_promedio = 0
+    abajo_del_promedio = 0
+
 tendencia = ""
 if arriba_del_promedio > abajo_del_promedio:
     tendencia = "al alza"
 else:
     tendencia = "a la baja"
-    
 
 print(f"""El valor actual de la inversion en {cripto['nombre']} : {valor_actual_inversion:.3f} en {cripto['moneda']}, el valor de la cripto: {cripto_price:.3f} {cripto['moneda']}
           y el porcentaje con respecto a la compra base es: {porcentaje_ganacia_perdida:.3f}% 

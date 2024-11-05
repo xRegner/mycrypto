@@ -6,19 +6,19 @@ from absdb import calcula_tendenciaV1 as calcula_tendencia
 
 
 cripto = {
-    "nombre": "solana",
+    "nombre": "dogecoin",
     "moneda": "mxn",
-    "invertido": 0.84780797, #inversion en cripto
+    "invertido": 290.69362363, #inversion en cripto
     "camper_mode": {
-        "activo": False, #este modo es para cuando se esta vigiliando la cripto en operaciones de 1 o 2 dias al alza
-        "maximo": 1480000, #umbral de ganacia
-        "minimo": 1470000, #umbral de perdida
+        "activo": False, #este modo es para cuando se esta vigiliando la cripto en operaciones de 1 o 2 dias
+        "maximo": 55000, #umbral de ganacia
+        "minimo": 53000, #umbral de perdida
     },
-    "inversion_referencia": 3000.05, #lo que pagaste por la cripto
-    "porcentaje_ganancia": 3,
-    "porcentaje_perdida": 0.5, #tolerancia de perdida
+    "inversion_referencia": 804, #lo que pagaste por la cripto en tu moneda
+    "porcentaje_ganancia": 3.2,
+    "porcentaje_perdida": 0.5, #toleancia de perdida
     "notifica_perdidas": True,
-    "oportunidad": 3000 #definido por el usuario cuando se quiere comprar
+    "oportunidad": 2.9 #definido por el usuario cuando se quiere comprar
 }
 #obtner el precio de la cripto desde la api
 data = get_api_price(cripto["nombre"], cripto["moneda"])
@@ -50,6 +50,7 @@ if arriba_del_promedio > abajo_del_promedio:
     tendencia = "al alza"
 else:
     tendencia = "a la baja"
+    
 
 print(f"""El valor actual de la inversion en {cripto['nombre']} : {valor_actual_inversion:.3f} en {cripto['moneda']}, el valor de la cripto: {cripto_price:.3f} {cripto['moneda']}
           y el porcentaje con respecto a la compra base es: {porcentaje_ganacia_perdida:.3f}% 
