@@ -6,6 +6,7 @@ from absdb import calcula_tendenciaV1 as calcula_tendencia
 
 
 cripto = {
+    "activo": True,
     "nombre": "cardano",
     "moneda": "usd",
     "invertido": 143, #inversion en cripto
@@ -17,7 +18,7 @@ cripto = {
     "inversion_referencia": 50, #lo que pagaste por la cripto
     "porcentaje_ganancia": 3.2,
     "porcentaje_perdida": 0.5, #toleancia de perdida
-    "notifica_perdidas": False,
+    "notifica_perdidas": True,
     "oportunidad": 0.25 #definido por el usuario cuando se quiere comprar
 }
 #obtner el precio de la cripto desde la api

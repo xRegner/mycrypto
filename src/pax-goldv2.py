@@ -6,19 +6,19 @@ from absdb import calcula_tendenciaV1 as calcula_tendencia
 
 
 cripto = {
-    "nombre": "solana",
+    "nombre": "pax-gold",
     "moneda": "mxn",
-    "invertido": 0, #inversion en cripto
+    "invertido": 0.01082269, #inversion en cripto
     "camper_mode": {
         "activo": False, #este modo es para cuando se esta vigiliando la cripto en operaciones de 1 o 2 dias al alza
-        "maximo": 1480000, #umbral de ganacia
-        "minimo": 1470000, #umbral de perdida
+        "maximo": 55918, #umbral de ganacia
+        "minimo": 51000, #umbral de perdida
     },
-    "inversion_referencia": 3000.05, #lo que pagaste por la cripto
+    "inversion_referencia": 603, #lo que pagaste por la cripto
     "porcentaje_ganancia": 3,
     "porcentaje_perdida": 0.5, #tolerancia de perdida
     "notifica_perdidas": True,
-    "oportunidad": 3000 #definido por el usuario cuando se quiere comprar
+    "oportunidad": 53818 #definido por el usuario cuando se quiere comprar
 }
 #obtner el precio de la cripto desde la api
 data = get_api_price(cripto["nombre"], cripto["moneda"])
@@ -39,7 +39,7 @@ porcentaje_ganacia_perdida = ((valor_actual_inversion*100) / cripto["inversion_r
 arriba_del_promedio = 0
 abajo_del_promedio = 0
 try:
-    arriba_del_promedio, abajo_del_promedio = calcula_tendencia(150, cripto["nombre"] ) #se puede parametrizar
+    arriba_del_promedio, abajo_del_promedio = calcula_tendencia(300, cripto["nombre"] ) #se puede parametrizar
 except Error as e:
     print(f"Error al obtener los datos de la base de datos: {e}")
     arriba_del_promedio = 0

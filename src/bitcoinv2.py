@@ -6,18 +6,19 @@ from absdb import calcula_tendenciaV1 as calcula_tendencia
 
 
 cripto = {
+    "activo": True,
     "nombre": "bitcoin",
     "moneda": "mxn",
-    "invertido": 0.00028894 + 0.00083929, #inversion en cripto
+    "invertido": 0, #inversion en cripto
     "camper_mode": {
         "activo": False, #este modo es para cuando se esta vigiliando la cripto en operaciones de 1 o 2 dias
         "maximo": 1480000, #umbral de ganacia
         "minimo": 1470000, #umbral de perdida
     },
-    "inversion_referencia": 1570, #lo que pagaste por la cripto
-    "porcentaje_ganancia": 3.2,
+    "inversion_referencia": 402, #lo que pagaste por la cripto
+    "porcentaje_ganancia": 5,
     "porcentaje_perdida": 0.5, #toleancia de perdida
-    "notifica_perdidas": False,
+    "notifica_perdidas": True,
     "oportunidad": 1000000 #definido por el usuario cuando se quiere comprar
 }
 #obtner el precio de la cripto desde la api

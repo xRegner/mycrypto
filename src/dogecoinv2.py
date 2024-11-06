@@ -8,7 +8,7 @@ from absdb import calcula_tendenciaV1 as calcula_tendencia
 cripto = {
     "nombre": "dogecoin",
     "moneda": "mxn",
-    "invertido": 290.69362363, #inversion en cripto
+    "invertido": 0, #inversion en cripto
     "camper_mode": {
         "activo": False, #este modo es para cuando se esta vigiliando la cripto en operaciones de 1 o 2 dias
         "maximo": 55000, #umbral de ganacia
