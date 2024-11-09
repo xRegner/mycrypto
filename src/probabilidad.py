@@ -7,7 +7,7 @@ def obtener_datos():
     try:
         # Conectar a la base de datos MySQL
         connection = mysql.connector.connect(
-            host='localhost',  # Cambia esto si tu contenedor está en otra dirección
+            host='db',  # Cambia esto si tu contenedor está en otra dirección
             database='db',
             user='user',
             password='password'

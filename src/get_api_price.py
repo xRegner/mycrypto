@@ -5,6 +5,7 @@ from mysql.connector import Error
 
 def get_api_price(cripto, currency):
     url = f"https://api.coingecko.com/api/v3/simple/price?ids={cripto}&vs_currencies={currency}"
+    print(url)
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
@@ -16,7 +17,7 @@ def insert_record(fecha, valor, cripto):
     try:
             # Conectar a la base de datos MySQL
             connection = mysql.connector.connect(
-                host='localhost',  # Cambia esto si tu contenedor está en otra dirección
+                host='db',  # Cambia esto si tu contenedor está en otra dirección
                 database='db',
                 user='user',
                 password='password'

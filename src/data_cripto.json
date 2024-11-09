@@ -10,7 +10,7 @@
             "minimo": 1300000
         },
         "inversion_referencia": 402,
-        "porcentaje_ganancia": 5,
+        "porcentaje_ganancia": 6,
         "porcentaje_perdida": 0.5,
         "notifica_perdidas": false,
         "oportunidad": 1300000
@@ -26,7 +26,7 @@
             "minimo": 53000
         },
         "inversion_referencia": 402,
-        "porcentaje_ganancia": 3.2,
+        "porcentaje_ganancia": 6,
         "porcentaje_perdida": 0.5,
         "notifica_perdidas": true,
         "oportunidad": 48500
@@ -35,33 +35,33 @@
         "activo": true,
         "nombre": "dogecoin",
         "moneda": "mxn",
-        "invertido": 463.60726595,
+        "invertido": 200,
         "camper_mode": {
             "activo": false,
             "maximo": 5.5,
             "minimo": 5.4
         },
-        "inversion_referencia": 1870.305,
-        "porcentaje_ganancia": 20,
+        "inversion_referencia": 796,
+        "porcentaje_ganancia": 8,
         "porcentaje_perdida": 0.5,
-        "notifica_perdidas": false,
-        "oportunidad": 3.7
+        "notifica_perdidas": true,
+        "oportunidad": 2.7
     },
     {
         "activo": true,
         "nombre": "pax-gold",
         "moneda": "mxn",
-        "invertido": 0.01082269,
+        "invertido": 0.02923982,
         "camper_mode": {
             "activo": false,
-            "maximo": 0.1480000,
-            "minimo": 0.1470000
+            "maximo": 55600,
+            "minimo": 53600
         },
-        "inversion_referencia": 589.332,
-        "porcentaje_ganancia": 30,
+        "inversion_referencia": 1768,
+        "porcentaje_ganancia": 6,
         "porcentaje_perdida": 0.5,
         "notifica_perdidas": false,
-        "oportunidad": 51000
+        "oportunidad": 50000
     },
     {
         "activo": false,
@@ -74,16 +74,16 @@
             "minimo": 1470000
         },
         "inversion_referencia": 3000.05,
-        "porcentaje_ganancia": 3,
+        "porcentaje_ganancia": 8,
         "porcentaje_perdida": 0.5,
         "notifica_perdidas": true,
         "oportunidad": 3000
     },
     {
-        "activo": true,
+        "activo": false,
         "nombre": "cardano",
         "moneda": "usd",
-        "invertido": 37.707476,
+        "invertido": 0,
         "camper_mode": {
             "activo": false,
             "maximo": 1480000,
@@ -94,5 +94,71 @@
         "porcentaje_perdida": 0.5,
         "notifica_perdidas": true,
         "oportunidad": 0.25
+    },
+    {
+        "activo": true,
+        "nombre": "openanx",
+        "moneda": "usd",
+        "invertido": 313.66656121,
+        "camper_mode": {
+            "activo": false,
+            "maximo": 0.167,
+            "minimo": 0.140
+        },
+        "inversion_referencia": 49,
+        "porcentaje_ganancia": 15,
+        "porcentaje_perdida": 0.5,
+        "notifica_perdidas": false,
+        "oportunidad": 0.14
+    },
+    {
+        "activo": true,
+        "nombre": "avalanche-2",
+        "moneda": "mxn",
+        "invertido": 2.67161474,
+        "camper_mode": {
+            "activo": false,
+            "maximo": 0.167,
+            "minimo": 0.140
+        },
+        "inversion_referencia": 1466.71,
+        "porcentaje_ganancia": 18,
+        "porcentaje_perdida": 0.5,
+        "notifica_perdidas": false,
+        "oportunidad": 470
+    },
+    {
+        "activo": true,
+        "nombre": "litecoin",
+        "moneda": "mxn",
+        "invertido": 1.03381664,
+        "camper_mode": {
+            "activo": false,
+            "maximo": 1676,
+            "minimo": 1500
+        },
+        "inversion_referencia": 1475.35,
+        "porcentaje_ganancia": 7,
+        "porcentaje_perdida": 0.5,
+        "notifica_perdidas": false,
+        "oportunidad": 1255
+    },
+    {
+        "activo": false,
+        "nombre": "matic-network",
+        "moneda": "mxn",
+        "invertido": 0,
+        "camper_mode": {
+            "activo": true,
+            "maximo": 8.3,
+            "minimo": 7.9
+        },
+        "inversion_referencia": 786.85,
+        "porcentaje_ganancia": 15,
+        "porcentaje_perdida": 0.5,
+        "notifica_perdidas": false,
+        "oportunidad": 6.2
     }
+
+
 ]
